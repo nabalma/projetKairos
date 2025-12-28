@@ -1,12 +1,13 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { SkipButton } from '../components/skip-button/skip-button';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [SkipButton],
   templateUrl: './app.html',
-  styleUrl: './app.css'
 })
 export class App {
   protected readonly title = signal('projetKairos');
+  gestionSkip() {}
 }

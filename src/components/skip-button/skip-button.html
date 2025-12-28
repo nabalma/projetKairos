@@ -1,0 +1,28 @@
+<button
+  type="button"
+  (click)="passerALaPageSuivante()"
+  (mouseenter)="survoler()"
+  class="inline-flex items-center gap-2 rounded-lg border border-borderSoft px-3 py-2 text-sm text-white/70 bg-transparent transition-all duration-150 hover:bg-surfaceHover hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
+>
+  <!-- Icon -->
+  <svg
+    class="h-4 w-4 opacity-80"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M7 7l5 5-5 5" />
+    <path d="M12 7l5 5-5 5" />
+  </svg>
+
+  <!-- Label -->
+  <span class="font-medium tracking-tight">
+    {{ label }}
+  </span>
+
+  <!-- Counter (optionnel) -->
+  <span class="ml-1 text-xs opacity-60">{{ nombredeSurvols > 0 ? nombredeSurvols : '' }}</span>
+</button>
