@@ -19,8 +19,8 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        "back": '#0f1115',
-        "surface": 'rgba(255,255,255,0.04)',
+        back: '#0f1115',
+        surface: 'rgba(255,255,255,0.04)',
         surfaceHover: 'rgba(255,255,255,0.06)',
         borderSoft: 'rgba(255,255,255,0.08)',
         accent: '#7C5CFF',
@@ -28,7 +28,7 @@ const config: Config = {
         primary: 'var(--primary-color)',
         text: 'rgba(255,255,255,0.92)',
         muted: 'rgba(255,255,255,0.64)',
-        codeBg: '#0b0c0e'
+        codeBg: '#0b0c0e',
       },
     },
   },
@@ -36,7 +36,6 @@ const config: Config = {
 };
 
 export default config;
-
 
 //   plugins: [],
 // } satisfies Config;
