@@ -8,13 +8,5 @@ import { Component } from '@angular/core';
 export class SkipButton {
   label: string = 'Skip';
   nombredeSurvols: number = 0;
-
-  passerALaPageSuivante(): void {
-    console.log('Bouton cliqué, passer à la page suivante');
-  }
-
-  survoler(): void {
-    this.nombredeSurvols++;
-    console.log('Bouton survolé');
-  }
+  
 }

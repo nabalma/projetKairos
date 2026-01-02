@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { SkipButton } from '../components/skip-button/skip-button';
+import { SkipButton } from './shared/components/skip-button/skip-button';
 
 @Component({
   selector: 'app-root',
