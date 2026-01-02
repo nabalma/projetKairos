@@ -2,18 +2,123 @@
 @import 'tailwindcss';
 
 @theme {
-  /* Colors */
-  --color-brand: #1a2b33;
+  /* ============================================
+     COULEURS PRINCIPALES
+     ============================================ */
   
-  /* Note : En v4, on garde vos définitions exactes */
-  --color-surface: rgba(255, 255, 255, 0.04);
-  --color-surfaceHover: rgba(255, 255, 255, 0.06);
-  --color-borderSoft: rgba(255, 255, 255, 0.08);
+  /* Primaire - Bleu concentration */
+  --color-primary: #3B82F6;
+  --color-primary-hover: #2563EB;
+  --color-primary-light: #60A5FA;
+  --color-primary-soft: rgba(59, 130, 246, 0.1);
   
-  --color-accent: #7C5CFF;
-  --color-accentSoft: rgba(124, 92, 255, 0.25);
+  /* Secondaire - Violet académique */
+  --color-secondary: #8B5CF6;
+  --color-secondary-hover: #7C3AED;
+  --color-secondary-soft: rgba(139, 92, 246, 0.1);
   
-  --color-text: rgba(255, 255, 255, 0.92);
-  --color-muted: rgba(255, 255, 255, 0.64);
-  --color-codeBg: #0b0c0e;
+  /* ============================================
+     COULEURS SÉMANTIQUES (Status)
+     ============================================ */
+  
+  /* Succès / Disponibilité - Vert menthe */
+  --color-success: #34D399;
+  --color-success-dark: #10B981;
+  --color-success-light: #D1FAE5;
+  --color-success-soft: rgba(52, 211, 153, 0.1);
+  
+  /* Attention / Urgence - Orange doux */
+  --color-warning: #FB923C;
+  --color-warning-hover: #F97316;
+  --color-warning-light: #FED7AA;
+  --color-warning-soft: rgba(251, 146, 60, 0.1);
+  
+  /* Danger / Critique - Rouge modéré */
+  --color-danger: #EF4444;
+  --color-danger-light: #FEE2E2;
+  --color-danger-soft: rgba(239, 68, 68, 0.1);
+  
+  /* Information - Bleu ciel */
+  --color-info: #06B6D4;
+  --color-info-light: #E0F2FE;
+  --color-info-soft: rgba(6, 182, 212, 0.1);
+  
+  /* ============================================
+     COULEURS NEUTRES (Structure)
+     ============================================ */
+  
+  /* Textes */
+  --color-text-primary: #1F2937;
+  --color-text-secondary: #4B5563;
+  --color-text-tertiary: #6B7280;
+  --color-text-disabled: #94A3B8;
+  --color-text-muted: #9CA3AF;
+  
+  /* Backgrounds */
+  --color-background: #F8FAFC;
+  --color-background-secondary: #F1F5F9;
+  --color-background-tertiary: #E2E8F0;
+  --color-surface: #FFFFFF;
+  --color-surface-hover: #F8FAFC;
+  
+  /* Bordures */
+  --color-border: #E5E7EB;
+  --color-border-secondary: #D1D5DB;
+  --color-border-light: #F3F4F6;
+  
+  /* ============================================
+     MODE SOMBRE (Dark Mode)
+     ============================================ */
+  
+  /* Backgrounds sombres */
+  --color-dark-bg: #0F172A;
+  --color-dark-surface: #1E293B;
+  --color-dark-surface-elevated: #334155;
+  
+  /* Textes dark mode */
+  --color-dark-text: #F1F5F9;
+  --color-dark-text-secondary: #CBD5E1;
+  --color-dark-text-tertiary: #94A3B8;
+  
+  /* Bordures dark mode */
+  --color-dark-border: #334155;
+  --color-dark-border-light: #1E293B;
+  
+  /* ============================================
+     COULEURS PAR MATIÈRE (optionnel)
+     ============================================ */
+  
+  --color-course-1: #3B82F6; /* Bleu */
+  --color-course-2: #8B5CF6; /* Violet */
+  --color-course-3: #34D399; /* Vert */
+  --color-course-4: #FB923C; /* Orange */
+  --color-course-5: #06B6D4; /* Cyan */
+  --color-course-6: #EC4899; /* Rose */
+  
+  /* ============================================
+     ANCIENNES VARIABLES (compatibilité)
+     ============================================ */
+  
+  /* Si vous voulez garder certaines anciennes variables */
+  --color-brand: #3B82F6; /* Remplacé par primary */
+  --color-accent: #8B5CF6; /* Remplacé par secondary */
+  --color-accentSoft: rgba(139, 92, 246, 0.1);
+  --color-codeBg: #0F172A;
+  
+  /* ============================================
+     UTILITAIRES TAILWIND (exemples d'usage)
+     ============================================ */
+  
+  /*
+  Usage dans vos composants:
+  
+  - Boutons primaires: bg-primary text-white hover:bg-primary-hover
+  - Boutons secondaires: border border-text-disabled text-text-disabled hover:border-primary hover:text-primary
+  - Timeline disponible: bg-success/10 border-success
+  - Timeline urgente: bg-warning/10 border-warning
+  - Cartes: bg-surface border border-border hover:border-primary
+  - Texte principal: text-text-primary
+  - Texte secondaire: text-text-secondary
+  - Fond de page: bg-background
+  */
 }
