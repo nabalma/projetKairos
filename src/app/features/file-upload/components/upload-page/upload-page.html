@@ -1,0 +1,156 @@
+<div class="min-h-screen bg-background">
+  <!-- Conteneur externe pour l'espace -->
+  <div class="p-6 md:p-8 lg:p-10">
+    
+    <!-- Carte principale PLUS LARGE -->
+    <div class="w-full max-w-5xl mx-auto bg-surface border-2 border-border rounded-3xl p-6 md:p-8 shadow-2xl">
+      
+      <!-- Header compact -->
+      <header class="mb-6">
+        <div class="flex justify-between items-start">
+          <div>
+            <h1 class="text-2xl md:text-3xl font-bold text-text-primary mb-1">
+              Téléversement de fichiers
+            </h1>
+            <p class="text-text-secondary text-sm md:text-base">
+              Importez vos plan de cours pour commencer
+            </p>
+          </div>
+        </div>
+      </header>
+
+      <!-- Conteneur pour les 2 cartes côte à côte -->
+      <div class="flex flex-col lg:flex-row gap-6 mb-8">
+        
+        <!-- Carte 1: Zone Drag & Drop (MOINS HAUTE) -->
+        <div class="lg:flex-1 bg-background border-2 border-dashed border-primary/30 rounded-2xl p-6 text-center group hover:border-primary transition-all duration-300 cursor-pointer min-h-[260px] flex flex-col justify-center">
+          
+          <!-- Icône upload (plus petite) -->
+          <div class="mb-6 mx-auto">
+            <svg class="w-16 h-16 mx-auto text-primary/70 group-hover:text-primary group-hover:scale-110 transition-all duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+            </svg>
+          </div>
+          
+          <!-- Titre -->
+          <h3 class="text-xl font-bold text-text-primary mb-4">
+            Drag & Drop files to upload
+          </h3>
+          
+          <!-- Bouton -->
+          <div class="mb-6">
+            <p class="text-text-secondary text-sm mb-4 font-medium">ou</p>
+            <app-button 
+              variant="primary" 
+              size="medium" 
+              rounded="lg"
+              class="px-8 py-3 text-base font-bold">
+              📁 Browse
+            </app-button>
+          </div>
+          
+          <!-- Formats supportés -->
+          <p class="text-xs text-text-disabled font-mono uppercase tracking-wide">
+            Supported: PDF
+          </p>
+        </div>
+
+        <!-- Carte 2: Fichiers uploadés (plus large, moins haute) -->
+        <div class="lg:flex-1 bg-background border border-border/50 rounded-2xl p-6 shadow-sm ">
+          
+          <!-- Header de la liste (compact) -->
+          <div class="flex items-center justify-between mb-6 pb-4 border-b border-border/50">
+            <h3 class="text-xl font-bold text-text-primary">
+              Uploaded files
+            </h3>
+            <span class="text-base text-text-secondary font-bold bg-primary-soft px-3 py-1.5 rounded-xl shadow-md">
+              4
+            </span>
+          </div>
+
+          <!-- Liste des fichiers (plus large, moins de hauteur par élément) -->
+          <div class="space-y-3 max-h-[200px] overflow-y-auto">
+            
+            <!-- Fichier 1: Final.pdf -->
+            <div class="flex items-center gap-4 p-3 bg-surface rounded-xl group hover:bg-primary-soft/50 transition-all duration-200 border border-border/30 hover:border-primary/50">
+              <div class="w-12 h-12 bg-red-500/10 border border-red-500/30 rounded-lg flex items-center justify-center shrink-0">
+                <span class="text-red-500 text-xs font-bold">PDF</span>
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex justify-between items-center mb-1">
+                  <p class="text-sm font-semibold text-text-primary truncate">plan de cours LOG1810.pdf</p>
+                  <span class="text-xs text-text-secondary">5.2 MB</span>
+                </div>
+                <div class="w-full bg-border/50 rounded-full h-1.5 overflow-hidden">
+                  <div class="bg-success h-1.5 rounded-full" style="width: 100%"></div>
+                </div>
+              </div>
+              <app-button variant="ghost" size="small" class="p-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                <svg class="w-4 h-4 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </app-button>
+            </div>
+
+            <!-- Fichier 2: Brief, logo.pdf -->
+            <div class="flex items-center gap-4 p-3 bg-surface rounded-xl group hover:bg-primary-soft/50 transition-all duration-200 border border-border/30 hover:border-primary/50">
+              <div class="w-12 h-12 bg-blue-500/10 border border-blue-500/30 rounded-lg flex items-center justify-center shrink-0">
+                <span class="text-blue-500 text-xs font-bold">PDF</span>
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex justify-between items-center mb-1">
+                  <p class="text-sm font-semibold text-text-primary truncate">Brief, logo.pdf</p>
+                  <span class="text-xs text-text-secondary">3.8 MB</span>
+                </div>
+                <div class="w-full bg-border/50 rounded-full h-1.5 overflow-hidden">
+                  <div class="bg-warning h-1.5 rounded-full" style="width: 75%"></div>
+                </div>
+              </div>
+              <app-button variant="ghost" size="small" class="p-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                <svg class="w-4 h-4 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </app-button>
+            </div>
+
+            <!-- Fichier 4: Final.png -->
+            <div class="flex items-center gap-4 p-3 bg-surface rounded-xl group hover:bg-primary-soft/50 transition-all duration-200 border border-border/30 hover:border-primary/50">
+              <div class="w-12 h-12 bg-yellow-500/10 border border-yellow-500/30 rounded-lg flex items-center justify-center shrink-0">
+                <span class="text-yellow-500 text-xs font-bold">PNG</span>
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex justify-between items-center mb-1">
+                  <p class="text-sm font-semibold text-text-primary truncate">Final.png</p>
+                  <span class="text-xs text-text-secondary">2.1 MB</span>
+                </div>
+                <div class="w-full bg-border/50 rounded-full h-1.5 overflow-hidden">
+                  <div class="bg-secondary h-1.5 rounded-full" style="width: 30%"></div>
+                </div>
+              </div>
+              <app-button variant="ghost" size="small" class="p-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                <svg class="w-4 h-4 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </app-button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bouton Skip (compact) -->
+      <div class="flex justify-end pt-8 border-t border-border/50 mt-6">
+        <app-button 
+          variant="outline" 
+          size="large" 
+          rounded="lg"
+          class="px-10 py-3 text-base font-bold tracking-wider uppercase transition-all duration-300">
+          <svg class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+          </svg>
+          Skip
+        </app-button>
+      </div>
+      
+    </div>
+  </div>
+</div>

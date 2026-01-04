@@ -101,7 +101,7 @@
   
   /* Si vous voulez garder certaines anciennes variables */
   --color-brand: #3B82F6; /* Remplacé par primary */
-  --color-accent: #8B5CF6; /* Remplacé par secondary */
+  --color-accent: #3B82F6; /* Remplacé par secondary */
   --color-accentSoft: rgba(139, 92, 246, 0.1);
   --color-codeBg: #0F172A;
   

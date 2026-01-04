@@ -3,10 +3,10 @@ import { ButtonComponent } from '../../../../shared/components/button/button';
 
 @Component({
   selector: 'app-upload-page',
-  imports: [],
+  imports: [ButtonComponent],
   templateUrl: './upload-page.html',
   styleUrl: './upload-page.css',
 })
-export class FileUpload {
+export class UploadPageComponent {
 
 }
