@@ -1,10 +1,10 @@
 import { Component, signal } from '@angular/core';
-import { SkipButton } from './shared/components/skip-button/skip-button';
+import { ButtonComponent } from './shared/components/button/button';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [SkipButton],
+  imports: [ButtonComponent],
   templateUrl: './app.html',
 })
 export class App {
