@@ -1,64 +1,50 @@
 import { Component, input} from '@angular/core';
 
-type ButtonVariant = 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'ghost' | 'glass' | 'soft' | 'outline';
+type ButtonVariant = 'primary' | 'secondary' | 'ghost';
 type ButtonSize = 'small' | 'medium' | 'large';
-type ButtonRounded = 'sm' | 'md' | 'lg' | 'full';
-type ButtonType = 'button' | 'submit' | 'reset';
 
 @Component({
   selector: 'app-button',
+  standalone: true, // Angular 17+
   imports: [],
-  templateUrl: './button.html',
-  styleUrl: './button.css',
+  template: `
+    <button [class]="buttonClasses" [type]="type()" [disabled]="disabled()">
+      <ng-content></ng-content>
+    </button>
+  `,
 })
-
 export class ButtonComponent {
-
   variant = input<ButtonVariant>('primary');
   size = input<ButtonSize>('medium');
-  rounded = input<ButtonRounded>('lg');
-  type = input<ButtonType>('button');
+  type = input<'button' | 'submit'>('button');
   disabled = input<boolean>(false);
 
   get buttonClasses(): string {
-    // Classes de base (toujours appliquées)
-    const base = 'font-medium transition-all duration-200 inline-flex items-center justify-center gap-2 active:scale-95 active:opacity-90';
+    const base = 'font-sans font-medium transition-all duration-200 inline-flex items-center justify-center rounded-[var(--radius-btn)] cursor-pointer active:scale-[0.98]';
     
-    // Variants de couleur
-   const variants = {
-      primary:    'bg-primary text-white hover:bg-primary/90 active:bg-primary/80',
-      secondary:  'bg-secondary text-secondary-foreground hover:bg-secondary/80',
-      success:    'bg-success text-white hover:bg-success/90',
-      warning:    'bg-warning text-warning-foreground hover:bg-warning/90',
-      danger:     'bg-destructive text-destructive-foreground hover:bg-destructive/90',
-      ghost:      'hover:bg-accent hover:text-accent-foreground',
-      outline:    'border border-input bg-transparent hover:bg-accent hover:text-accent-foreground',
-      glass:      'bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20',
-      soft:       'bg-muted/70 border border-border/40 hover:bg-muted/90',
+    // Mapping des styles Deep Focus
+    const variants = {
+      // Le bouton Vert de l'image
+      primary: 'bg-[var(--color-primary)] text-[var(--color-primary-text)] hover:bg-[var(--color-primary-hover)] border border-transparent',
+      
+      // Le bouton Skip (Sombre, contour discret)
+      secondary: 'bg-[var(--color-surface-hover)] text-text-secondary border border-border hover:border-text-secondary hover:text-text-primary',
+      
+      // Optionnel : totalement transparent
+      ghost: 'bg-transparent text-text-secondary hover:text-text-primary'
     };
     
-    // Tailles
     const sizes = {
-      small: 'px-3 py-1.5 text-sm',
-      medium: 'px-4 py-2 text-base',
-      large: 'px-6 py-3 text-lg'
+      small: 'px-3 py-1.5 text-xs',
+      medium: 'px-5 py-2.5 text-sm', // Taille standard confortable
+      large: 'px-8 py-3 text-base'
     };
-    
-    // Border radius (arrondi)
-    const roundness = {
-      sm: 'rounded',
-      md: 'rounded-lg',
-      lg: 'rounded-xl',
-      full: 'rounded-full'
-    };
-  
-    
-    // Assembler toutes les classes
+
     return `
       ${base} 
       ${variants[this.variant()]} 
       ${sizes[this.size()]} 
-      ${roundness[this.rounded()]}
+      ${this.disabled() ? 'opacity-50 cursor-not-allowed' : ''}
     `.trim().replace(/\s+/g, ' ');
   }
 }
