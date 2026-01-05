@@ -35,6 +35,33 @@
   --radius-btn: 0.75rem;    /* Arrondi des boutons (12px) */
 }
 
+@layer utilities {
+  /* Classe pour la scrollbar style "Deep Focus" */
+  .scrollbar-obsidian {
+    /* Pour Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: #374151 transparent; /* Thumb (Gris foncé) / Track (Invisible) */
+  }
+
+  /* Pour Chrome, Edge, Safari */
+  .scrollbar-obsidian::-webkit-scrollbar {
+    width: 6px; /* Très fine */
+  }
+
+  .scrollbar-obsidian::-webkit-scrollbar-track {
+    background: transparent; /* Le fond est invisible, on voit la couleur de la carte */
+  }
+
+  .scrollbar-obsidian::-webkit-scrollbar-thumb {
+    background-color: #1F2937; /* Un gris très foncé (couleur de bordure subtile) */
+    border-radius: 20px;       /* Pill shape (arrondi) */
+    border: 1px solid transparent; /* Marge interne pour détacher le thumb */
+  }
+
+  .scrollbar-obsidian::-webkit-scrollbar-thumb:hover {
+    background-color: #4B5563; /* S'éclaire légèrement au survol pour l'interaction */
+  }
+}
 /* Application globale pour forcer le mode sombre */
 body {
   background-color: var(--color-background);
