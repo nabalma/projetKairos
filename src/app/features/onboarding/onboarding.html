@@ -4,21 +4,26 @@
       <h2 class="text-[10px] font-bold text-accent-green uppercase tracking-[0.3em]">
         Configuration initiale
       </h2>
-      <p class="text-xs text-text-disabled">Étape 1 sur 3</p>
+      <p class="text-xs text-text-disabled">Étape {{ currentStep() }} sur {{ totalSteps }}</p>
     </div>
 
     <div class="flex gap-2">
-      <div [class]="'h-1 w-8 rounded-full transition-all duration-500 bg-accent-green'"></div>
-
       <div
         [class]="
-          'h-1 w-8 rounded-full transition-all duration-500 bg-surface border border-border/50'
+          'h-1 w-8 rounded-full transition-all duration-500 ' +
+          (currentStep() >= 1 ? 'bg-accent-green' : 'bg-surface border border-border/50')
         "
       ></div>
-
       <div
         [class]="
-          'h-1 w-8 rounded-full transition-all duration-500 bg-surface border border-border/50'
+          'h-1 w-8 rounded-full transition-all duration-500 ' +
+          (currentStep() >= 2 ? 'bg-accent-green' : 'bg-surface border border-border/50')
+        "
+      ></div>
+      <div
+        [class]="
+          'h-1 w-8 rounded-full transition-all duration-500 ' +
+          (currentStep() >= 3 ? 'bg-accent-green' : 'bg-surface border border-border/50')
         "
       ></div>
     </div>
@@ -26,7 +31,10 @@
 
   <main class="w-full max-w-5xl flex flex-col justify-center transition-all duration-500">
     <div class="animate-in fade-in slide-in-from-bottom-4 duration-700">
-      <app-course-setup-page></app-course-setup-page>
+      @switch (currentStep()) { @case (1) { <app-upload-page></app-upload-page> } @case (2) {
+      <app-course-setup-page></app-course-setup-page> } @case (3) {
+      <div class="text-white text-center">Étape 3 : Disponibilités (À venir)</div>
+      } }
     </div>
   </main>
 
@@ -55,10 +63,10 @@
       <app-button
         variant="primary"
         size="large"
-        rounded="lg"
+        (click)="nextStep()"
         class="px-10 py-3 text-base font-bold tracking-wider uppercase transition-all duration-300"
       >
-        Continuer
+        {{ currentStep() === totalSteps ? 'Terminer' : 'Continuer' }}
         <svg
           class="ml-2 h-4 w-4"
           fill="none"

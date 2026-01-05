@@ -1,12 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, signal, computed } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { ButtonComponent } from '../../shared/components/button/button';
+import { CourseSetupPageComponent } from '../course-setup/course-setup-page/course-setup-page';
 import { UploadPageComponent } from '../file-upload/upload-page/upload-page';
-import { CourseSetupPageComponent } from '../course-setup/course-setup-page';
 
 @Component({
   selector: 'app-onboarding',
-  imports: [ButtonComponent, CourseSetupPageComponent],
+  standalone: true,
+  imports: [CommonModule, ButtonComponent, CourseSetupPageComponent, UploadPageComponent],
   templateUrl: './onboarding.html',
-  styleUrl: './onboarding.css',
+  // Plus besoin du tableau 'animations' ni d'imports compliqués !
 })
-export class OnboardingComponent {}
+export class OnboardingComponent {
+  // État réactif
+  currentStep = signal(1);
+  totalSteps = 3;
+
+  nextStep() {
+    if (this.currentStep() < this.totalSteps) this.currentStep.update((s) => s + 1);
+  }
+
+  prevStep() {
+    if (this.currentStep() > 1) this.currentStep.update((s) => s - 1);
+  }
+
+  skip() {
+    this.nextStep();
+  }
+}
