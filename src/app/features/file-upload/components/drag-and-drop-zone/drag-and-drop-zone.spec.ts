@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DragAndDropZone } from './drag-and-drop-zone';
+import { DragAndDropZoneComponent } from './drag-and-drop-zone';
 
 describe('DragAndDropZone', () => {
-  let component: DragAndDropZone;
-  let fixture: ComponentFixture<DragAndDropZone>;
+  let component: DragAndDropZoneComponent;
+  let fixture: ComponentFixture<DragAndDropZoneComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DragAndDropZone]
-    })
-    .compileComponents();
+      imports: [DragAndDropZoneComponent],
+    }).compileComponents();
 
-    fixture = TestBed.createComponent(DragAndDropZone);
+    fixture = TestBed.createComponent(DragAndDropZoneComponent);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

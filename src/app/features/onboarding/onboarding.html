@@ -1,0 +1,74 @@
+<div class="min-h-screen bg-background flex flex-col items-center justify-center p-6 md:p-12">
+  <header class="w-full max-w-5xl mb-10 flex items-center justify-between">
+    <div class="flex flex-col gap-1">
+      <h2 class="text-[10px] font-bold text-accent-green uppercase tracking-[0.3em]">
+        Configuration initiale
+      </h2>
+      <p class="text-xs text-text-disabled">Étape 1 sur 3</p>
+    </div>
+
+    <div class="flex gap-2">
+      <div [class]="'h-1 w-8 rounded-full transition-all duration-500 bg-accent-green'"></div>
+
+      <div
+        [class]="
+          'h-1 w-8 rounded-full transition-all duration-500 bg-surface border border-border/50'
+        "
+      ></div>
+
+      <div
+        [class]="
+          'h-1 w-8 rounded-full transition-all duration-500 bg-surface border border-border/50'
+        "
+      ></div>
+    </div>
+  </header>
+
+  <main class="w-full max-w-5xl flex flex-col justify-center transition-all duration-500">
+    <div class="animate-in fade-in slide-in-from-bottom-4 duration-700">
+      <app-upload-page></app-upload-page>
+    </div>
+  </main>
+
+  <footer
+    class="w-full max-w-5xl flex items-center justify-between border-t border-border/100 pt-8 mt-6"
+  >
+    <app-button
+      variant="ghost"
+      size="medium"
+      class="text-text-disabled hover:text-text-primary px-4"
+    >
+      <span class="flex items-center gap-2">
+        <span class="text-[11px] font-bold uppercase tracking-widest">Passer cette étape</span>
+        <svg class="w-4 h-4 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M13 5l7 7-7 7M5 5l7 7-7 7"
+          />
+        </svg>
+      </span>
+    </app-button>
+
+    <div class="flex justify-end">
+      <app-button
+        variant="primary"
+        size="large"
+        rounded="lg"
+        class="px-10 py-3 text-base font-bold tracking-wider uppercase transition-all duration-300"
+      >
+        Continuer
+        <svg
+          class="ml-2 h-4 w-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2.5"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+        </svg>
+      </app-button>
+    </div>
+  </footer>
+</div>

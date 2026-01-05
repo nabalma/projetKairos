@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { ButtonComponent } from '../../../../shared/components/button/button';
 import { FileItemComponent } from '../file-item/file-item';
 
 @Component({
   selector: 'app-file-list',
-  imports: [ButtonComponent, FileItemComponent],
+  imports: [FileItemComponent],
   templateUrl: './file-list.html',
   styleUrl: './file-list.css',
   host: {
