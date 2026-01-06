@@ -7,14 +7,14 @@ on:
       - componentsManagement
     paths:
       - "frontEnd/**"
-      - ".github/workflows/frontEnd-ci.yaml" # Ajout pour déclencher sur modif du script
+      - ".github/workflows/frontEnd-ci.yaml"
   pull_request:
     branches:
       - main
       - componentsManagement
     paths:
       - "frontEnd/**"
-      - ".github/workflows/frontEnd-ci.yaml" # Ajouts pour déclencher sur modif du script
+      - ".github/workflows/frontEnd-ci.yaml"
 
 jobs:
   build:
@@ -39,6 +39,10 @@ jobs:
         run: npm run lint
         working-directory: ./frontEnd
         continue-on-error: true
+
+      - name: Run Tests
+        run: npm test -- --watch=false --browsers=ChromeHeadless
+        working-directory: ./frontEnd
 
       - name: Production Build
         run: npm run build
