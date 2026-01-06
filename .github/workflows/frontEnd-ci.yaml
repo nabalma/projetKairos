@@ -14,7 +14,7 @@ on:
       - componentsManagement
     paths:
       - "frontEnd/**"
-      - ".github/workflows/frontend-ci.yaml" # Ajout pour déclencher sur modif du script
+      - ".github/workflows/frontend-ci.yaml" # Ajouts pour déclencher sur modif du script
 
 jobs:
   build:
