@@ -1,0 +1,45 @@
+name: Frontend CI
+
+on:
+  push:
+    branches:
+      - main
+      - componentsManagement
+    paths:
+      - "frontEnd/**"
+      - ".github/workflows/frontend-ci.yml" # Ajout pour déclencher sur modif du script
+  pull_request:
+    branches:
+      - main
+      - componentsManagement
+    paths:
+      - "frontEnd/**"
+      - ".github/workflows/frontend-ci.yml" # Ajout pour déclencher sur modif du script
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: "./frontEnd/package-lock.json"
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: ./frontEnd
+
+      - name: Lint
+        run: npm run lint
+        working-directory: ./frontEnd
+        continue-on-error: true
+
+      - name: Production Build
+        run: npm run build
+        working-directory: ./frontEnd
