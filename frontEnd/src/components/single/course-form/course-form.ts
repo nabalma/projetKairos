@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { ButtonComponent } from '../../shared/button/button';
 
-
 @Component({
   selector: 'app-course-form',
   imports: [ButtonComponent],
@@ -9,3 +8,4 @@ import { ButtonComponent } from '../../shared/button/button';
   styleUrl: './course-form.css',
 })
 export class CourseFormComponent {}
+//comment to test git changes
