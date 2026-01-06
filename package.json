@@ -1,0 +1,24 @@
+{
+  "name": "projetkairos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nabalma/projetKairos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nabalma/projetKairos/issues"
+  },
+  "homepage": "https://github.com/nabalma/projetKairos#readme",
+  "devDependencies": {
+    "husky": "^8.0.0"
+  }
+}

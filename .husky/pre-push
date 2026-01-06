@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "🔍 Vérification des tests avant le push..."
+cd frontEnd
+npm test -- --watch=false --browsers=ChromeHeadless
