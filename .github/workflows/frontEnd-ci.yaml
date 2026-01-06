@@ -43,7 +43,7 @@ jobs:
 
       # Mise à jour de la commande de test pour éviter les erreurs d'arguments
       - name: Run Tests
-        run: npm test -- --watch=false --browser=chromium --headless
+        run: npm test
         working-directory: ./frontEnd
 
       - name: Production Build
