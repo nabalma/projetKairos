@@ -1,3 +1,70 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss';
 
-@import "tailwindcss";
+@theme {
+  /* ============================================
+     PALETTE DEEP FOCUS (Concentration)
+     ============================================ */
+  
+  /* Backgrounds - L'univers sombre */
+  --color-background: #0B0E14;     /* Noir bleuté très profond */
+  --color-surface: #151A23;        /* Gris-bleu un peu plus clair pour les cartes */
+  --color-surface-hover: #1E2532;  /* Interaction */
+  
+  /* Primaire - Le Vert "Focus" (Bouton Browse) */
+  --color-primary: #345844;        /* Vert forêt profond (fond du bouton) */
+  --color-primary-hover: #3E6950;  /* Vert un peu plus clair au survol */
+  --color-primary-text: #E2E8F0;   /* Texte sur le bouton vert */
+  
+  /* Accents de progression (Barres fines) */
+  --color-accent-green: #10B981;   /* Vert émeraude vif */
+  --color-accent-orange: #F97316;  /* Orange brûlé */
+  
+  /* Textes - Contraste doux pour les yeux */
+  --color-text-primary: #F1F5F9;   /* Blanc cassé (Titre) */
+  --color-text-secondary: #94A3B8; /* Gris moyen (Sous-titres) */
+  --color-text-muted: #475569;     /* Gris foncé (Détails) */
+  
+  /* Bordures - Subtiles */
+  --color-border: #2D3748;         /* Séparation discrète */
+  --color-border-dashed: #334155;  /* Pour la zone de drag & drop */
+
+  /* ============================================
+     UTILITAIRES
+     ============================================ */
+  --radius-card: 1.5rem;    /* Arrondi des cartes (24px) */
+  --radius-btn: 0.75rem;    /* Arrondi des boutons (12px) */
+}
+
+@layer utilities {
+  /* Classe pour la scrollbar style "Deep Focus" */
+  .scrollbar-obsidian {
+    /* Pour Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: #374151 transparent; /* Thumb (Gris foncé) / Track (Invisible) */
+  }
+
+  /* Pour Chrome, Edge, Safari */
+  .scrollbar-obsidian::-webkit-scrollbar {
+    width: 6px; /* Très fine */
+  }
+
+  .scrollbar-obsidian::-webkit-scrollbar-track {
+    background: transparent; /* Le fond est invisible, on voit la couleur de la carte */
+  }
+
+  .scrollbar-obsidian::-webkit-scrollbar-thumb {
+    background-color: #1F2937; /* Un gris très foncé (couleur de bordure subtile) */
+    border-radius: 20px;       /* Pill shape (arrondi) */
+    border: 1px solid transparent; /* Marge interne pour détacher le thumb */
+  }
+
+  .scrollbar-obsidian::-webkit-scrollbar-thumb:hover {
+    background-color: #4B5563; /* S'éclaire légèrement au survol pour l'interaction */
+  }
+}
+/* Application globale pour forcer le mode sombre */
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: 'Inter', sans-serif; /* Assure-toi d'avoir une font clean */
+}
