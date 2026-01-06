@@ -7,14 +7,14 @@ on:
       - componentsManagement
     paths:
       - "frontEnd/**"
-      - ".github/workflows/frontend-ci.yml" # Ajout pour déclencher sur modif du script
+      - ".github/workflows/frontend-ci.yaml" # Ajout pour déclencher sur modif du script
   pull_request:
     branches:
       - main
       - componentsManagement
     paths:
       - "frontEnd/**"
-      - ".github/workflows/frontend-ci.yml" # Ajout pour déclencher sur modif du script
+      - ".github/workflows/frontend-ci.yaml" # Ajout pour déclencher sur modif du script
 
 jobs:
   build:
